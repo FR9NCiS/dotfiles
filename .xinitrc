@@ -1,1 +1,1 @@
-exec dwm
+.config/xinitrc

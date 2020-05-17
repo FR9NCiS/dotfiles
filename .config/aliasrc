@@ -1,0 +1,31 @@
+#!/bin/sh
+
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
+
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+alias \
+	ka="killall" \
+	g="git" \
+	YT="youtube-viewer" \
+	sdn="sudo shutdown -h now" \
+	p="sudo pacman" \
+
+alias \
+	ll="ls -AlhN --color=auto --sort=extension"
+
+alias \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
