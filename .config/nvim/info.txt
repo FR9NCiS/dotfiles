@@ -1,0 +1,10 @@
+vimtex -> https://github.com/lervag/vimtex/issues/1420
+
+1) Copy/paste support on Arch
+sudo pacman -S xsel
+
+2) Neovim python support
+pip install pynvim
+
+3) Neovim nodejs support
+sudo npm i -g neovim
