@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Sets the bg to the specified file
+# If no file is specified use a random one instead
+
+PICSDIR="$HOME/data/pictures"
+BGLOC="$HOME/.local/share/background"
+
+[[ ! -d "$PICSDIR" ]] && exit 1
+
+link_random() {
+  RANDPIC=$( find "$PICSDIR" -type f | shuf -n 1 )
+  ln -sf "$RANDPIC" "$BGLOC"
+}
+
+[[ -e "$1" && -f "$1" ]] && ln -s "$1" "$BGLOC" || link_random
+feh --bg-scale "$BGLOC"
