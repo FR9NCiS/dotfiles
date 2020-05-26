@@ -22,5 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     " Airline themes bundle
     " Plug 'vim-airline/vim-airline-themes'
-    
+    " Color support (hex, rgb() => color)
+    Plug 'ap/vim-css-color' 
+
 call plug#end()
