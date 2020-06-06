@@ -25,7 +25,13 @@ alias \
 	p="sudo pacman" \
 
 alias \
-	ll="ls -AlhN --color=auto --sort=extension"
+	ls="ls -AlhN --color=auto --sort=extension"
+
+alias \
+  ll="ls"
+
+alias \
+ rcp="rsync --progress" 
 
 alias \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
