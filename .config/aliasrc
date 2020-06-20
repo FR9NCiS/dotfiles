@@ -9,29 +9,12 @@ alias \
 	mkd="mkdir -pv" \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner"
-
-alias \
-	ls="ls -hN --color=auto --group-directories-first" \
+	ffmpeg="ffmpeg -hide_banner" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
-
-alias \
-	ka="killall" \
-	g="git" \
-	YT="youtube-viewer" \
+	ccat="highlight --out-format=ansi" \
 	sdn="sudo shutdown -h now" \
 	p="sudo pacman" \
-
-alias \
-	ls="ls -AlhN --color=auto --sort=extension"
-
-alias \
-  ll="ls"
-
-alias \
- rcp="rsync --progress" 
-
-alias \
-	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+	ls="ls -AlhN --color=auto --sort=extension" \
+  rsync="rsync --progress" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
