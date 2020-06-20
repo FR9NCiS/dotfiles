@@ -6,7 +6,7 @@
 
 ## [Suckless](https://suckless.org/) programs
 
-These programs do not have 'configuration files' but are modified via their respectable header/source files and then recompiled. Just clone my custom forks and ```sudo make install``` and you're good to go.
+These programs do not have 'configuration files' but are modified via their respectable header/source files and then recompiled. Just clone my custom forks (URLs below) and ```sudo make clean install``` and you're good to go.
 
 - [dwm](https://github.com/fr9ncis/dwm) (dynamic window manager)
 - [st](https://github.com/fr9ncis/st) (terminal emulator)
