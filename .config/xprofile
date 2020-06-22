@@ -1,3 +1,4 @@
 #!/bin/sh
-
-# This file is executed when you log into a graphical session (e.g. via startx)
+sh $HOME/.config/screenlayout/desktop-pc.sh
+xset r rate 300 50 &
+/usr/bin/setxkbmap -option "caps:swapescape"
