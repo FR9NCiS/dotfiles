@@ -1,2 +1,4 @@
 #!/bin/sh
+sh $HOME/.config/screenlayout/desktop-pc.sh
 xset r rate 300 50 &
+/usr/bin/setxkbmap -option "caps:swapescape"

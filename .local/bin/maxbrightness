@@ -1,3 +1,0 @@
-#!/bin/sh
-# Needs to be run either with sudo or as root
-cat /sys/class/backlight/intel_backlight/max_brightness | tee /sys/class/backlight/intel_backlight/brightness

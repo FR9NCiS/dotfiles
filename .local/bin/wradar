@@ -1,4 +1,0 @@
-#!/bin/sh
-URL="http://cdn-radar.ilmeteo.it/italy.gif"
-notify-send "Loading Weather Radar" "Fetching from $URL"
-mpv --loop-file=inf --no-osc "$URL"

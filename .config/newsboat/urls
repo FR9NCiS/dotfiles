@@ -1,12 +1,18 @@
 " "
+"---NEWS---"
+https://www.archlinux.org/feeds/news/ "tech"
+
+" "
+"---VIDEOS---"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
+
+" "
 "---MEMES---"
 https://www.reddit.com/r/ProgrammerHumor.rss "~r/ProgrammerHumor"
 https://www.reddit.com/r/DankMemes.rss "~r/DankMemes"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw "~Internet Historian (YouTube)"
 
 " "
-"---Memes---"
+"---BLOGS---"
 http://lukesmith.xyz/rss.xml
 https://notrelated.libsyn.com/rss
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
-https://www.archlinux.org/feeds/news/ "tech"
