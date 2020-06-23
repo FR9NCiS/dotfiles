@@ -12,3 +12,5 @@ if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
+
+hi Normal guibg=NONE ctermbg=NONE

@@ -13,5 +13,7 @@ link_random() {
   ln -sf "$RANDPIC" "$BGLOC"
 }
 
+notify-send "setbg" "Setting wallpaper..."
+
 [[ -e "$1" && -f "$1" ]] && ln -s "$1" "$BGLOC" || link_random
 feh --bg-scale "$BGLOC"

@@ -15,7 +15,8 @@ alias \
 	ccat="highlight --out-format=ansi" \
 	sdn="sudo shutdown -h now" \
 	p="sudo pacman" \
-	ls="ls -AlhN --color=auto --sort=extension" \
+	ll="ls -AlhN --color=auto --sort=extension" \
+  ls="ls --color=auto" \
   rsync="rsync --progress" \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
   gp="git remote | xargs -L1 git push --all" \
