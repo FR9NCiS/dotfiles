@@ -1,10 +1,12 @@
 " "
 "---NEWS---"
 https://www.archlinux.org/feeds/news/ "tech"
+https://github.com/fr9ncis.private.atom?token=ALJDDKEYY5BWZ5ATV4PM4I547537Y "~GitHub Feed"
 
 " "
 "---VIDEOS---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
+https://www.youtube.com/subscription_manager?action_takeout=1
 
 " "
 "---MEMES---"

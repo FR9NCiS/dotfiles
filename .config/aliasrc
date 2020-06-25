@@ -3,6 +3,7 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 alias \
+  date="date '+%Y %b %d (%a) $icon%I:%M%p'" \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -vI" \

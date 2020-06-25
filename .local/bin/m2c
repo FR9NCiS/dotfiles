@@ -4,7 +4,7 @@ set -o pipefail
 set -o nounset
 
 # Variables
-FPS=60
+FPS=30
 DEVICE_NUMBER=50
 MONITOR_NUMBER=
 FFMPEG_OPTIONS=
