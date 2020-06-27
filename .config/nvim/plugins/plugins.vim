@@ -16,13 +16,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Gruvbox color scheme
     Plug 'morhetz/gruvbox'
-    " Stable version of coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " coc
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     " Airline
     Plug 'vim-airline/vim-airline'
-    " Airline themes bundle
-    " Plug 'vim-airline/vim-airline-themes'
     " Color support (hex, rgb() => color)
-    Plug 'ap/vim-css-color' 
+    Plug 'ap/vim-css-color'
+    " C/C++/ObjC semantic highlighting using the LSP
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Start screen for Vim
+    Plug 'mhinz/vim-startify'
+
+    " Icons, always load as last one
+    Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
