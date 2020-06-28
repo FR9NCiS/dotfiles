@@ -10,10 +10,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " File Explorer
-    Plug 'scrooloose/NERDTree'
-    " Auto pairs for '(' '[' '{' 
-    Plug 'jiangmiao/auto-pairs'
+    " Vim + TMUX = <3
+    Plug 'christoomey/vim-tmux-navigator'
+    " Git integration
+    Plug 'tpope/vim-fugitive'
+    " Display git changes
+    Plug 'airblade/vim-gitgutter'
     " Gruvbox color scheme
     Plug 'morhetz/gruvbox'
     " coc

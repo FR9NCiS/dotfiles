@@ -34,7 +34,7 @@ let g:startify_change_to_dir = 1
 let g:startify_custom_header = s:center(s:header) " Center the header
 let g:startify_files_number = 5
 
-let g:startify_bookmarks = []
+let g:startify_bookmarks = ['~/repos/gpmc/gpmc.c']
 
 let g:startify_lists = [
       \ { 'type': 'files',     'header': ['   Recent Files']        },

@@ -4,22 +4,22 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 alias \
   date="date '+%Y %b %d (%a) $icon%I:%M%p'" \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkd="mkdir -pv" \
-	yt="youtube-dl --add-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	sdn="sudo shutdown -h now" \
-	p="sudo pacman" \
-	ll="ls -AlhN --color=auto --sort=extension" \
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -vI" \
+  mkd="mkdir -pv" \
+  yt="youtube-dl --add-metadata -i" \
+  yta="yt -x -f bestaudio/best" \
+  ffmpeg="ffmpeg -hide_banner" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi" \
+  sdn="sudo shutdown -h now" \
+  p="sudo pacman" \
+  ll="ls -AlhN --color=auto --sort=extension" \
   ls="ls --color=auto" \
   rsync="rsync --progress" \
-	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+  tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
   gp="git remote | xargs -L1 git push --all" \
-  gs="git status" \
+  gs="git status -s" \
   gm="git add . && git commit -m"
