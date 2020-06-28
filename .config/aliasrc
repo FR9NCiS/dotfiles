@@ -3,7 +3,7 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 alias \
-  date="date '+%Y %b %d (%a) $icon%I:%M%p'" \
+  date="date '+%Y %b %d (%a) %I:%M%p'" \
   cp="cp -iv" \
   mv="mv -iv" \
   rm="rm -vI" \
@@ -16,10 +16,14 @@ alias \
   ccat="highlight --out-format=ansi" \
   sdn="sudo shutdown -h now" \
   p="sudo pacman" \
+  mnt="sudo mount" \
+  umnt="sudo umount" \
   ll="ls -AlhN --color=auto --sort=extension" \
   ls="ls --color=auto" \
   rsync="rsync --progress" \
   tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
   gp="git remote | xargs -L1 git push --all" \
   gs="git status -s" \
-  gm="git add . && git commit -m"
+  gl="git log" \
+  gm="git add . && git commit -m" \
+  gam="git commit -a -m"

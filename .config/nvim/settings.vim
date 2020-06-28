@@ -33,4 +33,6 @@ set list!                               " Show above on default
 set number relativenumber               " Show relativenumber (line numbers)
 set nu rnu                              " Enable hybrid line numbers
 
+autocmd BufWritePost config.h !sudo make clean install
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
