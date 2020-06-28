@@ -1,8 +1,9 @@
 #!/bin/sh
 source "$HOME/.config/screenlayout/desktop-pc.sh" # Load screenlayout script (you WONT need this, only for MY MONITOR SETUP)
 xset r rate 300 50 & # Increase xrate (trust me, you WANT this)
-xcompmgr & # Load comp manager for transparency
-dunst & # Notificaton service
-setbg & # Load a random wallpaper
+xset s off
+xcompmgr &
+dunst &
+setbg &
 dwmbar &
 m2c -m 0 & # Stream primary monitor to a virt cam
