@@ -1,9 +1,0 @@
-#!/bin/sh
-
-while :; do
-
-  xsetroot -name "`date '+%Y %b %d (%a) %I:%M%p'`"
-  sleep 60
-
-done
-

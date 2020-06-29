@@ -9,7 +9,14 @@ export TERMINAL="st"
 export BROWSER="firefox-nightly"
 export READER="zathura"
 
-# ~/ Clean-up:
+# Default directories (used in most of my scripts)
+#export PICTURES=""
+export WALLPAPERS="$HOME/.local/share/wallpapers"
+#export VIDEOS=""
+#export DOCUMENTS=""
+#export DOWNLOADS=""
+
+# XDG Config Dir Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -23,7 +30,7 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
-# Other program settings:
+# Misc
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"

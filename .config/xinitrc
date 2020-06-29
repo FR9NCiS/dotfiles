@@ -1,7 +1,3 @@
 #!/bin/sh
-[ -f "$HOME/.xprofile" ] && source "$HOME/.xprofile"
-
-# Mod+F2 to restart dwm
-#while :; do
-  ssh-agent dwm
-#done
+. ~/.xprofile
+ssh-agent dwm

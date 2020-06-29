@@ -10,6 +10,7 @@ function s:suckless()
         \ { 'line': 'st - simple terminal', 'cmd': ':e ~/repos/st/config.h' },
         \ { 'line': 'dwm - dynamic window manager', 'cmd': ':e ~/repos/dwm/config.h' },
         \ { 'line': 'dmenu - menu launcher', 'cmd': ':e ~/repos/dmenu/config.h' },
+        \ { 'line': 'dwmblocks - modular bar', 'cmd': ':e ~/repos/dwmblocks/config.h' },
         \ ]
 endfunction
 
