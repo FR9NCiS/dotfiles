@@ -10,13 +10,13 @@ export BROWSER="firefox-nightly"
 export READER="zathura"
 
 # Default directories (used in most of my scripts)
-#export PICTURES=""
+export PICTURES="$HOME/personal/pictures"
+export VIDEOS="$HOME/personal/videos"
+export DOCUMENTS="$HOME/personal/documents"
+export DOWNLOADS="$HOME/personal/downloads"
 export WALLPAPERS="$HOME/.local/share/wallpapers"
-#export VIDEOS=""
-#export DOCUMENTS=""
-#export DOWNLOADS=""
 
-# XDG Config Dir Specification
+# XDG Dir Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -29,6 +29,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 
 # Misc
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"

@@ -21,31 +21,24 @@
 
 # Ciphers and keying
 #RekeyLimit default none
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr
-HostKeyAlgorithms ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-rsa,ssh-dss
-KexAlgorithms ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256
-MACs hmac-sha2-256,hmac-sha2-512
-
-#Only use SSH Protocol 2
-Protocol 2
 
 # Logging
 #SyslogFacility AUTH
-LogLevel VERBOSE
+#LogLevel INFO
 
 # Authentication:
 
 #LoginGraceTime 2m
-PermitRootLogin prohibit-password
+#PermitRootLogin prohibit-password
 #StrictModes yes
-MaxAuthTries 4
+#MaxAuthTries 6
 #MaxSessions 10
 
-PubkeyAuthentication yes
+#PubkeyAuthentication yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
-AuthorizedKeysFile	/etc/ssh/authorized_keys
+AuthorizedKeysFile	.ssh/authorized_keys
 
 #AuthorizedPrincipalsFile none
 
@@ -56,13 +49,13 @@ AuthorizedKeysFile	/etc/ssh/authorized_keys
 #HostbasedAuthentication no
 # Change to yes if you don't trust ~/.ssh/known_hosts for
 # HostbasedAuthentication
-IgnoreUserKnownHosts yes
+#IgnoreUserKnownHosts no
 # Don't read the user's ~/.rhosts and ~/.shosts files
-IgnoreRhosts yes
+#IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-PasswordAuthentication no
-PermitEmptyPasswords no
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
 ChallengeResponseAuthentication no
@@ -89,9 +82,9 @@ ChallengeResponseAuthentication no
 UsePAM yes
 
 #AllowAgentForwarding yes
-AllowTcpForwarding no
-GatewayPorts no
-X11Forwarding no
+#AllowTcpForwarding yes
+#GatewayPorts no
+#X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
@@ -99,21 +92,18 @@ PrintMotd no # pam does that
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no
-Compression no
+#Compression delayed
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
 #UseDNS no
 #PidFile /run/sshd.pid
 #MaxStartups 10:30:100
-PermitTunnel no
+#PermitTunnel no
 #ChrootDirectory none
 #VersionAddendum none
 
-# Add your users here
-AllowUsers dev root
-
 # no default banner path
-Banner /etc/motd
+#Banner none
 
 # override default of no subsystems
 Subsystem	sftp	/usr/lib/ssh/sftp-server

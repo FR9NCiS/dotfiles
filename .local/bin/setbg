@@ -3,19 +3,17 @@
 # Sets the bg to the specified file
 # If no file is specified use a random one instead
 
-echo "changing.."
-
-PICSDIR="$HOME/.local/share/wallpapers/"
 BGLOC="$HOME/.local/share/wallpapers/background"
 
-[[ ! -d "$PICSDIR" ]] && exit 1
+[[ ! -d "$WALLPAPERS" ]] && exit 1
 
-link_random() {
-  RANDPIC=$( find "$PICSDIR" -type f | shuf -n1 )
-  ln -sf "$RANDPIC" "$BGLOC"
-}
+if [[ -f "$1" ]]; then
+  notify-send "Setting wallpaper to $(basename $1)..."
+  ln -fs "$1" "$BGLOC"
+else 
+  notify-send "Setting a random wallpaper..."
+  RANDPIC=$( find $WALLPAPERS/ -type f -name '*.jpg' | shuf -n 1 )
+  ln -fs "$RANDPIC" "$BGLOC"
+fi
 
-# notify-send "Changing wallpaper" "Setting wallpaper..."
-
-[[ -e "$1" && -f "$1" ]] && ln -fs "$1" "$BGLOC" || link_random
 feh --bg-scale "$BGLOC"

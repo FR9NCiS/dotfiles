@@ -28,7 +28,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     " Start screen for Vim
     Plug 'mhinz/vim-startify'
-
+    " Emmet integration
+    Plug 'mattn/emmet-vim'
     " Icons, always load as last one
     Plug 'ryanoasis/vim-devicons'
 
