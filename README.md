@@ -1,4 +1,4 @@
-# My personal configuration files and scripts (Francesco La Camera <https://lacamera.xyz>)
+# My personal configuration files and scripts (Francesco La Camera <https://lacamera.io>)
 
 - Scripts are placed in `~/.local/bin/`
 - [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) for config files
