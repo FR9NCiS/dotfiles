@@ -1,6 +1,5 @@
 # My personal configuration files and scripts
 
-- Scripts are placed in `~/.local/bin/`
 - [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) for config files
 
 - Configuration files for:
