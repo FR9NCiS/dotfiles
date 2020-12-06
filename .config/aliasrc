@@ -1,8 +1,8 @@
 #!/bin/sh
 
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
-
 alias \
+  alias vim="nvim" \
+  vimdiff="nvim -d" \
   fdate="date '+%Y %b %d (%a) %I:%M%p'" \
   cp="cp -iv" \
   mv="mv -iv" \
@@ -18,11 +18,8 @@ alias \
   p="sudo pacman" \
   ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S" \
   ys="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay --removemake --cleanafter --nodiffmenu -S" \
-  mnt="sudo mount" \
-  umnt="sudo umount" \
-  smake="sudo make clean install" \
-  ls="ls -A" \
   ll="ls -AlhN --color=auto --sort=extension" \
+  exa="exa --git -l" \
   ls="ls --color=auto" \
   rsync="rsync --progress" \
   tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
