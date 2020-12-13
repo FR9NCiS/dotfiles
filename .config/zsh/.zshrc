@@ -2,20 +2,16 @@ autoload -U colors && colors
 
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-[ -f /etc/bash.command-not-found ] && source /etc/bash.command-not-found # just havin a good day, eh
-
 setopt autocd
 stty stop undef
 
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=$XDG_CONFIG_HOME/zsh/history
-
+HISTFILE="$XDG_CONFIG_HOME/zsh/history"
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/directoryrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/directoryrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/filerc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/filerc"
-[ -d "$HOME/.local/share/cargo/" ] && source "$HOME/.local/share/cargo/env"
 
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -23,3 +19,4 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

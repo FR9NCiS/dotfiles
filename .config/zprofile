@@ -1,12 +1,10 @@
 #!/bin/zsh
-
-# Adds `~/.local/bin` to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
+#https://wiki.archlinux.org/index.php/XDG_Base_Directory#Supported
 
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="firefox-nightly"
+export BROWSER="firefox"
 export READER="zathura"
 
 # Default directories (used in most of my scripts)
@@ -19,19 +17,57 @@ export WALLPAPERS="$HOME/.local/share/wallpapers"
 # XDG Dir Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_BIN_HOME="$HOME/.local/bin"
+export XDG_LIB_HOME="$HOME/.local/lib"
 export XDG_CACHE_HOME="$HOME/.cache"
-export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
-export LESSHISTFILE="-"
-#export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-#export ALSA_CONFIG_PATH="$XDG_CONFIG_HOME/alsa/asoundrc"
+#export XDG_RUNTIME_DIR="/run/user/$UID"
+
+# Include XDG_BIN_HOME in PATH
+export PATH="$XDG_BIN_HOME:$PATH"
+
+# Rust lang
+export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+
+# XDG compliancy fixes
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export DBUS_SESSION_BUS_ADDRESS=unix:path="$XDG_RUNTIME_DIR/bus"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export GOPATH="$XDG_DATA_HOME/go"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+export GEM_PATH="$HOME/.local/bin"
+#export GIT_SSH_COMMAND="ssh -F $XDG_CONFIG_HOME/ssh/config "$@" 2>/dev/null"
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export HOMERC="$XDG_CONFIG_HOME/htop/htoprc"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
+export npm_config_userconfig="$XDG_CONFIG_HOME/npm/npmrc"
+export PIP_CONFIG_FILE="$XDG_CONFIG_HOME/pip/pip.conf"
+export PIP_LOG_FILE="$XDG_DATA_HOME/pip/log"
+export PSQLRC="$XDG_CONFIG_HOME/psql/psqlrc"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql/history"
+export PYLINTHOME="$XDG_DATA_HOME/pylint"
+export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export TERMINFO="$XDG_CONFIG_HOME/terminfo"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+
+# XDG workaround for SSH
+#if [ -s "$XDG_CONFIG_HOME/ssh/config" ]; then
+#    SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
+#fi
+
+#if [ -s "$XDG_CONFIG_HOME/ssh/id_ed25519" ]; then
+#    SSH_ID="-i $XDG_CONFIG_HOME/ssh/id_ed25519"
+#fi
 
 # Misc
+export LESSHISTFILE="-"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"

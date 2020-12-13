@@ -24,7 +24,7 @@ show_indicators = no
 icon_position = off
 sticky_history = yes
 history_length = 10 
-browser = /usr/bin/firefox-nightly -new-tab
+browser = /usr/bin/firefox -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
@@ -32,7 +32,6 @@ class = Dunst
 [shortcuts]
 close = ctrl+space
 close_all = ctrl+shift+space
-history = ctrl+grave
 context = ctrl+shift+period
 
 [urgency_low]

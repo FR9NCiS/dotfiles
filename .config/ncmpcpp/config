@@ -1,31 +1,91 @@
+#
+# TODO
+# - Variable 'main_window_highlight_color' is deprecated and will be removed in 0.9 (set current_item_prefix = "$(blue)$r" and current_item_suffix = "$/r$(end)" to preserve current behavior).
+# - Variable 'progressbar_boldness' is deprecated and will be removed in 0.9 (use extended progressbar_color and progressbar_elapsed_color instead).
+# - Variable 'active_column_color' is deprecated and will be removed in 0.9 (replaced by current_item_inactive_column_prefix and current_item_inactive_column_suffix).
+#
+
+#
+# general setup
+#
 ncmpcpp_directory = "~/.config/ncmpcpp"
-lyrics_directory = "~/.local/share/lyrics"
-mpd_music_dir = "~/ncmpcpp/music"
+lyrics_directory = "~/.local/share/ncmpcpp/lyrics"
+mpd_music_dir = "/media/wd_mypassport_1tb/media/music"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "5"
+#default_place_to_search_in = "database"
+
+
+#
+# navigation
+#
+cyclic_scrolling = "yes"
+header_text_scrolling = "yes"
+jump_to_now_playing_song_at_start = "yes"
+lines_scrolled = "2"
+
+
+#
+# visualizer
+#
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "FIFO visualizer feed"
+visualizer_sync_interval = "12"
+visualizer_type = "spectrum" #(spectrum/wave)
+visualizer_in_stereo = "yes"
+#visualizer_look = "+|"
+
+
+#
+# ui
+#
+display_bitrate = "yes"
+enable_window_title = "yes"
+header_visibility = "yes"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+progressbar_look =  "=>-"
+progressbar_boldness = "yes" # deprecated
+progressbar_elapsed_color = "white"
+now_playing_prefix = "> "
+song_status_format = " $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
+centered_cursor = "yes"
+playlist_disable_highlight_delay = "0"
+playlist_display_mode = "columns"
+playlist_show_remaining_time = "yes"
+browser_display_mode = "columns"
+autocenter_mode = "yes"
+song_columns_list_format = "(10)[blue]{l} (30)[green]{a} (30)[magenta]{b} (50)[yellow]{t}"
+colors_enabled = "yes"
+main_window_color = "white"
+main_window_highlight_color = "blue" # deprecated
+header_window_color = "cyan"
+volume_color = "white"
+progressbar_color = "cyan"
+statusbar_color = "white"
+active_column_color = "cyan" # deprecated
+active_window_border = "blue"
+alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
+song_list_format = "{$3%n │ $9}{$7%a - $9}{$5%t$9}|{$8%f$9}$R{$6 │ %b$9}{$3 │ %l$9}"
+user_interface = "alternative" #(alternative/classic)
+
+
+#
+# misc
+#
 message_delay_time = "1"
-visualizer_type = "spectrum"
-song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
-song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
-song_library_format = {%n - }{%t}|{%f}
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
-alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-current_item_prefix = $(cyan)$r$b
-current_item_suffix = $/r$(end)$/b
-current_item_inactive_column_prefix = $(magenta)$r
-current_item_inactive_column_suffix = $/r$(end)
-playlist_display_mode = columns
-browser_display_mode = columns
-progressbar_look = ->
-media_library_primary_tag = album_artist
-media_library_albums_split_by_date = no
-startup_screen = "media_library"
-display_volume_level = no
-ignore_leading_the = yes
-external_editor = nvim
-use_console_editor = yes
-empty_tag_color = magenta
-main_window_color = white
-progressbar_color = black:b
-progressbar_elapsed_color = blue:b
-statusbar_color = red
-statusbar_time_color = cyan:b
+incremental_seeking = "yes"
+seek_time = "1"
+follow_now_playing_lyrics = "yes"
+ignore_leading_the = "yes"
+empty_tag_marker = ""
+external_editor = "nvim"
+system_encoding = "utf-8"
+regular_expressions = "extended"
+selected_item_prefix = "* "
+discard_colors_if_item_is_selected = "no"
 execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
+
