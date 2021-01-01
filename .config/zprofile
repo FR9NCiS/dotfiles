@@ -1,37 +1,22 @@
 #!/bin/zsh
-#https://wiki.archlinux.org/index.php/XDG_Base_Directory#Supported
-
-# Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 
-# Default directories (used in most of my scripts)
-export PICTURES="$HOME/personal/pictures"
-export VIDEOS="$HOME/personal/videos"
-export DOCUMENTS="$HOME/personal/documents"
-export DOWNLOADS="$HOME/personal/downloads"
-export WALLPAPERS="$HOME/.local/share/wallpapers"
+#export PICTURES="$HOME/personal/pictures"
+#export VIDEOS="$HOME/personal/videos"
+#export DOCUMENTS="$HOME/personal/documents"
+#export DOWNLOADS="$HOME/personal/downloads"
+#export WALLPAPERS="$HOME/.local/share/wallpapers"
 
-# XDG Dir Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_BIN_HOME="$HOME/.local/bin"
 export XDG_LIB_HOME="$HOME/.local/lib"
 export XDG_CACHE_HOME="$HOME/.cache"
-#export XDG_RUNTIME_DIR="/run/user/$UID"
-
-# Include XDG_BIN_HOME in PATH
-export PATH="$XDG_BIN_HOME:$PATH"
-
-# Rust lang
-export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-
-# Ruby
-export PATH="$PATH:/home/lacamera/.gem/ruby/2.7.0/bin"
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export PATH="$XDG_BIN_HOME:$PATH" # add XDG_BIN_HOME to PATH
 
 # XDG compliancy fixes
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -41,7 +26,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export GEM_PATH="$HOME/.local/bin"
-#export GIT_SSH_COMMAND="ssh -F $XDG_CONFIG_HOME/ssh/config "$@" 2>/dev/null"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export HOMERC="$XDG_CONFIG_HOME/htop/htoprc"
@@ -59,24 +43,3 @@ export PYLINTRC="$XDG_CONFIG_HOME/pylint/pylintrc"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export TERMINFO="$XDG_CONFIG_HOME/terminfo"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-
-# XDG workaround for SSH
-#if [ -s "$XDG_CONFIG_HOME/ssh/config" ]; then
-#    SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
-#fi
-
-#if [ -s "$XDG_CONFIG_HOME/ssh/id_ed25519" ]; then
-#    SSH_ID="-i $XDG_CONFIG_HOME/ssh/id_ed25519"
-#fi
-
-# Misc
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export LESS=-R
-export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
-export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
-export LESS_TERMCAP_me="$(printf '%b' '[0m')"
-export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
-export LESS_TERMCAP_se="$(printf '%b' '[0m')"
-export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
-export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
-export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"

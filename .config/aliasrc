@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# vim/nvim
 alias \
   vim="nvim" \
   vimdiff="nvim -d"
@@ -8,7 +7,6 @@ alias \
 # FIXME
 #alias notify-send="sudo -u $USER DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS notify-send"
 
-# interactive
 alias \
   cp="cp -iv" \
   mv="mv -iv" \
@@ -22,38 +20,18 @@ alias \
   diff="diff --color=auto" \
   ccat="highlight --out-format=ansi" \
   rsync="rsync --progress" \
-  xrandr-con="xrandr | grep -Ev disconnected" \
-  artix_rankmirrors="curl -s 'https://gitea.artixlinux.org/packagesA/artix-mirrorlist/raw/branch/master/trunk/mirrorlist' | rankmirrors - | sudo tee /etc/pacman.d/mirrorlist"
+  ls="ls -AlhN --color=auto --sort=extension"
 
-# pacman/yay
-alias \
-  p="sudo pacman" \
-  ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S" \
-  ys="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay --removemake --cleanafter --nodiffmenu -S" \
-
-# ls/exa
-alias \
-  ll="ls -AlhN --color=auto --sort=extension" \
-  ls="exa --git --long --sort=ext --all"
-
-# git
 alias \
   gp="git remote | xargs -L1 git push --all" \
   gs="git status -s" \
-  gl="git log" \
-  gm="git add . && git commit -m" \
-  gam="git commit -a -m"
+  gm="git add . && git commit -m"
 
-# youtube-dl
 alias \
   yt="youtube-dl --add-metadata -i" \
   yta="yt -x -f bestaudio/best"
 
-# Fix XDG compliancy
 alias \
-      ncmpcpp="ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config" \
-      scp="scp -F $XDG_CONFIG_HOME/ssh/config" \
-      tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
-      yadm="yadm -Y $YADM_DIR" \
-#      ssh="ssh $SSH_CONFIG $SSH_ID " \
-#      ssh-copy-id="ssh-copy-id $SSH_ID"
+  ncmpcpp="ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config" \
+  scp="scp -F $XDG_CONFIG_HOME/ssh/config" \
+  tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
