@@ -1,1 +1,1 @@
-.config/zprofile
+.config/zsh/.zprofile
