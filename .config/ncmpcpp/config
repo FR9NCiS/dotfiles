@@ -1,11 +1,4 @@
 #
-# TODO
-# - Variable 'main_window_highlight_color' is deprecated and will be removed in 0.9 (set current_item_prefix = "$(blue)$r" and current_item_suffix = "$/r$(end)" to preserve current behavior).
-# - Variable 'progressbar_boldness' is deprecated and will be removed in 0.9 (use extended progressbar_color and progressbar_elapsed_color instead).
-# - Variable 'active_column_color' is deprecated and will be removed in 0.9 (replaced by current_item_inactive_column_prefix and current_item_inactive_column_suffix).
-#
-
-#
 # general setup
 #
 ncmpcpp_directory = "~/.config/ncmpcpp"
@@ -47,7 +40,6 @@ header_visibility = "yes"
 statusbar_visibility = "yes"
 titles_visibility = "yes"
 progressbar_look =  "=>-"
-progressbar_boldness = "yes" # deprecated
 progressbar_elapsed_color = "white"
 now_playing_prefix = "> "
 song_status_format = " $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
@@ -60,12 +52,10 @@ autocenter_mode = "yes"
 song_columns_list_format = "(10)[blue]{l} (30)[green]{a} (30)[magenta]{b} (50)[yellow]{t}"
 colors_enabled = "yes"
 main_window_color = "white"
-main_window_highlight_color = "blue" # deprecated
 header_window_color = "cyan"
 volume_color = "white"
 progressbar_color = "cyan"
 statusbar_color = "white"
-active_column_color = "cyan" # deprecated
 active_window_border = "blue"
 alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
 alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
@@ -87,5 +77,5 @@ system_encoding = "utf-8"
 regular_expressions = "extended"
 selected_item_prefix = "* "
 discard_colors_if_item_is_selected = "no"
-execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
+#execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
 

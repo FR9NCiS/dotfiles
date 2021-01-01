@@ -1,3 +1,4 @@
 #!/bin/sh
-source "$HOME/.xprofile"
-ssh-agent dwm
+while :; do
+	ssh-agent dwm
+done

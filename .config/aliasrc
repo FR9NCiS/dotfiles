@@ -5,6 +5,9 @@ alias \
   vim="nvim" \
   vimdiff="nvim -d"
 
+# FIXME
+#alias notify-send="sudo -u $USER DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS notify-send"
+
 # interactive
 alias \
   cp="cp -iv" \
