@@ -15,6 +15,7 @@ alias \
 
 # QoL
 alias \
+  startx="startx "$XDG_CONFIG_HOME/x11/xinitrc"" \
   ffmpeg="ffmpeg -hide_banner" \
   grep="grep --color=auto" \
   diff="diff --color=auto" \

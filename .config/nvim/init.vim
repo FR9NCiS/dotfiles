@@ -1,5 +1,4 @@
 " GENERAL
-syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed 
@@ -33,8 +32,9 @@ set listchars+=tab:>-,space:.           " Display white spaces as dots
 set list!                               " Show above on default
 set number relativenumber               " Show relativenumber (line numbers)
 set nu rnu                              " Enable hybrid line numbers
-autocmd FileType json syntax match Comment +\/\/.\+$+ " Add support for jsonc
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 " END GENERAL
 
 " PLUGINS
@@ -43,6 +43,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
+
     Plug 'honza/vim-snippets'
     Plug '9mm/vim-closer'
     Plug 'morhetz/gruvbox'
@@ -50,6 +53,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " END PLUGINS
+
+" LSPCONFIG
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
+" END LSPCONFIG
 
 " KEYBINDINGS
 " END KEYBINDINGS
