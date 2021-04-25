@@ -28,36 +28,35 @@ set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-set listchars+=tab:>-,space:.           " Display white spaces as dots
+"set listchars+=tab:>-,space:.           " Display white spaces as dots
 set list!                               " Show above on default
 set number relativenumber               " Show relativenumber (line numbers)
 set nu rnu                              " Enable hybrid line numbers
 
+" additional language support for jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " END GENERAL
 
 " PLUGINS
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob("$HOME/.config/nvim/autoload/plug.vim"))
+  silent !curl -fLo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
-
+call plug#begin("$HOME/.config/nvim/autoload/plugged")
+    "Plug 'neovim/nvim-lspconfig'
+    "Plug 'nvim-lua/completion-nvim'
     Plug 'honza/vim-snippets'
     Plug '9mm/vim-closer'
-    Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " END PLUGINS
 
 " LSPCONFIG
-set completeopt=menuone,noinsert,noselect
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
+"set completeopt=menuone,noinsert,noselect
+"let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+"lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
 " END LSPCONFIG
 
 " KEYBINDINGS
@@ -65,17 +64,7 @@ lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
 
 " THEME
 hi Comment cterm=italic
-let g:gruvbox_hide_endofbuffer=1
-let g:gruvbox_terminal_italics=1
-let g:gruvbox_termcolors=256
-let g:gruvbox_contrast_dark="hard"
 syntax on
-colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
 " END THEME
 
 " AIRLINE
@@ -87,7 +76,5 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'gruvbox'
-set showtabline=2
-set noshowmode
+"let g:airline_theme = 'gruvbox'
 " END AIRLINE
