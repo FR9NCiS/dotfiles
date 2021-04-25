@@ -15,7 +15,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_BIN_HOME="$HOME/.local/bin"
 export XDG_LIB_HOME="$HOME/.local/lib"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_RUNTIME_DIR="/run/user/$UID"
+export XDG_RUNTIME_DIR="/tmp/user-$UID"
 export PATH="$XDG_BIN_HOME:$PATH" # add XDG_BIN_HOME to PATH
 
 # XDG compliancy fixes
