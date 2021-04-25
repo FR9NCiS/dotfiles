@@ -1,38 +1,30 @@
 #!/bin/sh
-
 alias \
   vim="nvim" \
-  vimdiff="nvim -d"
-
-# FIXME
-#alias notify-send="sudo -u $USER DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS notify-send"
-
-alias \
+  vimdiff="nvim -d" \
   cp="cp -iv" \
   mv="mv -iv" \
   rm="rm -vI" \
   mkdir="mkdir -pv" \
-
-# QoL
-alias \
-  startx="startx "$XDG_CONFIG_HOME/x11/xinitrc"" \
   ffmpeg="ffmpeg -hide_banner" \
-  grep="grep --color=auto" \
-  diff="diff --color=auto" \
-  ccat="highlight --out-format=ansi" \
+  grep="grep --color=always" \
+  diff="diff --color=always" \
+  print="highlight --out-format=ansi" \
   rsync="rsync --progress" \
-  ls="ls -AlhN --color=auto --sort=extension"
-
-alias \
+  ls="ls -Aht --color=always" \
   gp="git remote | xargs -L1 git push --all" \
   gs="git status -s" \
-  gm="git add . && git commit -m"
-
-alias \
+  gm="git add . && git commit -m" \
   yt="youtube-dl --add-metadata -i" \
   yta="yt -x -f bestaudio/best"
 
+# FreeBSD
 alias \
+  objdump="llvm-objdump"
+
+# Fix XDG spec compliancy
+alias \
+  startx="startx "$XDG_CONFIG_HOME/x11/xinitrc"" \
   ncmpcpp="ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config" \
   scp="scp -F $XDG_CONFIG_HOME/ssh/config" \
-  tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
+  tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
