@@ -1,48 +1,46 @@
-" GENERAL
-set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
-set encoding=utf-8                      " The encoding displayed 
-set pumheight=10                        " Makes popup menu smaller
-set fileencoding=utf-8                  " The encoding written to file
-set ruler                               " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
+set hidden                              " required to keep multiple buffers open
+set nowrap
+set encoding=utf-8
+set fileencoding=utf-8
+set pumheight=10                        " pop-up menu height
+set ruler                               " show the ruler at all times
+"set cmdheight=0
 set iskeyword+=-                        " treat dash separated words as a word text object"
-set mouse=a                             " Enable your mouse
-set splitbelow                          " Horizontal splits will automatically be below
-set t_Co=256                            " Support 256 colors
+set mouse=a
+set splitbelow
+set t_Co=256
 set conceallevel=0                      " So that I can see `` in markdown files
-set tabstop=2                           " Insert 2 spaces for a tab
-set shiftwidth=2                        " Change the number of space characters inserted for indentation
-set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
-set expandtab                           " Converts tabs to spaces
-set smartindent                         " Makes indenting smart
-set autoindent                          " Good auto indent
-set laststatus=0                        " Always display the status line
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab                           " convert tabs to spaces
+set smartindent
+set autoindent
+set laststatus=0                        " always display the status line
 set number                              " Line numbers
-set cursorline                          " Enable highlighting of the current line
-set showtabline=2                       " Always show tabs 
-set noshowmode                          " We don't need to see things like -- INSERT -- anymore -> airline takes care of displaying the modes
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
-set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
-set formatoptions-=cro                  " Stop newline continution of comments
-set clipboard=unnamedplus               " Copy paste between vim and everything else
-"set listchars+=tab:>-,space:.           " Display white spaces as dots
-set list!                               " Show above on default
-set number relativenumber               " Show relativenumber (line numbers)
-set nu rnu                              " Enable hybrid line numbers
+set cursorline                          " enable highlighting of the current line
+set showtabline=2
+set noshowmode                          " airline takes care of the status bar
+set nobackup
+set nowritebackup
+set updatetime=300
+set timeoutlen=100
+set formatoptions-=cro                  " stop newline continution of comments
+set clipboard=unnamedplus
+"set listchars+=tab:>-,space:.
+set list!                               " show above on default
+set number relativenumber
+set nu rnu                              " hybrid line numbers
 
 " additional language support for jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" END GENERAL
-
-" PLUGINS
+" auto-install plug.vim if not yet installed
 if empty(glob("$HOME/.config/nvim/autoload/plug.vim"))
   silent !curl -fLo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 endif
 
+" load plugins
 call plug#begin("$HOME/.config/nvim/autoload/plugged")
     "Plug 'neovim/nvim-lspconfig'
     "Plug 'nvim-lua/completion-nvim'
@@ -51,23 +49,12 @@ call plug#begin("$HOME/.config/nvim/autoload/plugged")
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
-" END PLUGINS
 
-" LSPCONFIG
-"set completeopt=menuone,noinsert,noselect
-"let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-"lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
-" END LSPCONFIG
 
-" KEYBINDINGS
-" END KEYBINDINGS
-
-" THEME
 hi Comment cterm=italic
 syntax on
-" END THEME
 
-" AIRLINE
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
@@ -77,4 +64,3 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 "let g:airline_theme = 'gruvbox'
-" END AIRLINE

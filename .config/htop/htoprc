@@ -32,5 +32,5 @@ enable_mouse=1
 delay=10
 left_meters=Hostname Battery Uptime DateTime Blank DiskIO NetworkIO Tasks LoadAverage
 left_meter_modes=2 2 2 2 2 2 2 2 2
-right_meters=Memory Memory Swap ZFSARC ZFSCARC Blank CPU AllCPUs2
-right_meter_modes=2 1 2 2 2 2 2 1
+right_meters=Memory Swap ZFSCARC ZFSARC Blank CPU AllCPUs2
+right_meter_modes=2 2 2 2 2 2 1
